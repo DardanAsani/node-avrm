@@ -11,5 +11,15 @@
   "license": "ISC",
   "dependencies": {
     "node-fetch": "^2.6.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DardanAsani/node-avrm.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/DardanAsani/node-avrm/issues"
+  },
+  "homepage": "https://github.com/DardanAsani/node-avrm#readme"
 }

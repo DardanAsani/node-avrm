@@ -1,0 +1,7 @@
+numri i fjalive /
+numri i fjaleve/
+numri i karaktereve/
+sa fjal kane > 7 karaktere/
+sa fjal kane > < karaktere/
+sa fjal kane = 7 karaktere//
+cila fjale perseritet me shume/
