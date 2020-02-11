@@ -1,0 +1,76 @@
+//const mongoose = require("mongoose");
+
+
+
+
+const cstring ='mongodb+srv://daardii:vesper003@cluster0-lisjj.mongodb.net/prodavnica?retryWrites=true&w=majority';
+
+const Produkt = mongoose.model(
+    'produkti',
+    {
+        ime:String,
+        proizvoditel:String,
+        cena :Number,
+        tezina:Number,
+        parcinja:Number
+    },
+    'produkti'
+);
+
+
+mongoose.connect(cstring,{useNewUrlParser:true, useUnifiedTopology: true}, (err) => {
+    if(err)
+    {
+        console.log('Coul not connect to database');
+        return;
+    }
+});
+//add to database
+
+let p = new Produkt({
+  
+      
+        "ime" : "Milka",
+        "proizvoditel" : "Mondelez",
+        "cena" : 30.0,
+        "tezina" : 30.0,
+        "parcinja" : 1
+    
+
+});
+p.save((err) => {
+    if(err)
+    {
+        console.log('Coul not connect to database');
+        return;
+    }
+
+})
+
+//read to database
+Produkt.find({},(err, data) => {
+    if (err)
+    {
+        console.log('Could not save from database');
+        return;
+    }
+    console.log(data);
+});
+//delete from database
+Produkt.deleteOne({_id:"5e42b2bb7398be20882d5211"}, (err) => {
+    if (err)
+    {
+        console.log('Could not delete from database');
+        return;
+    }
+});
+// updata in database
+
+Produkt.update({ime:"Smoki"}, {cena: 15.0}, (err) => {
+    if (err)
+    {
+        console.log('Could not update record');
+        return;
+    }
+   
+} );
